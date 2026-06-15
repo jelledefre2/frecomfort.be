@@ -1,0 +1,97 @@
+{
+  "theme": "dark",
+  "archetype": "4 (Swiss & High-Contrast)",
+  "vibe": "Industrial, technical rigor, precise, structural clarity, high-end electrical contractor",
+  "colors": {
+    "background": {
+      "primary": "#0A0B0E", 
+      "secondary": "#14151A",
+      "tertiary": "#1D1E24"
+    },
+    "text": {
+      "primary": "#FFFFFF",
+      "secondary": "#A1A1AA",
+      "muted": "#71717A"
+    },
+    "brand": {
+      "primary": "#FFD60A",
+      "primary_hover": "#FFC300",
+      "accent": "#FF3366", 
+      "border": "#27272A"
+    }
+  },
+  "typography": {
+    "headings": {
+      "fontFamily": "Cabinet Grotesk, sans-serif",
+      "weights": ["300", "800"],
+      "tracking": "tracking-tight"
+    },
+    "body": {
+      "fontFamily": "IBM Plex Sans, sans-serif",
+      "weights": ["400", "500"]
+    },
+    "scale": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter uppercase",
+      "h2": "text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight",
+      "h3": "text-xl sm:text-2xl font-bold tracking-tight",
+      "body": "text-base leading-relaxed text-zinc-400",
+      "overline": "text-xs font-bold tracking-[0.2em] uppercase text-zinc-500"
+    }
+  },
+  "layout": {
+    "spacing_system": "Generous - p-8, p-12, p-24. High negative space to evoke premium feel.",
+    "grid_strategy": "Tetris Bento Grid for marketing. Asymmetrical grid-cols-1 md:grid-cols-12. gap-8.",
+    "containers": "Hard edges, border-white/10, no rounded corners. Industrial tech feel."
+  },
+  "motion": {
+    "hover": "High contrast shifts. border-white/10 to border-brand/50. text-zinc-400 to text-white.",
+    "transitions": "transition-all duration-300 ease-out",
+    "scroll": "Lenis smooth scroll (momentum) to feel premium. Framer motion for subtle reveal of bento grid cards."
+  },
+  "surfaces": {
+    "cards": "Flat background (bg-zinc-900/50), 1px solid border (border-white/5). Hover adds faint brand colored glow.",
+    "header": "Crystal glassmorphism: bg-black/60 backdrop-blur-xl border-b border-white/5.",
+    "buttons": "Square edges, sharp. Primary: bg-[#FFD60A] text-black hover:bg-[#FFC300]. Secondary: border border-white/20 text-white hover:bg-white hover:text-black."
+  },
+  "components": {
+    "hero": "Asymmetrical layout. Large typography intersecting with abstract/industrial imagery. Max overlay bg-black/50 or subtle gradient.",
+    "services_showcase": "Bento grid (Tetris Mode). Dense text, large image cutouts. Sharp corners.",
+    "gallery": "Grid with hover-reveal captions. Monotone images turning full color on hover.",
+    "testimonials": "Editorial layout. Large quote marks, generous p-12 padding. Subtle borders.",
+    "contact_form": "Minimalist inputs, border-b only (no full box). Custom Shadcn Form."
+  },
+  "media": {
+    "image_urls": {
+      "hero_bg": {
+        "url": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069&auto=format&fit=crop",
+        "description": "Abstract electrical/industrial lines glowing in the dark."
+      },
+      "services_panel": {
+        "url": "https://images.pexels.com/photos/34054464/pexels-photo-34054464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "An electrician testing an electrical panel"
+      },
+      "services_commercial": {
+        "url": "https://images.unsplash.com/photo-1541888086225-f6740f9e8aec?q=80&w=2070&auto=format&fit=crop",
+        "description": "Modern architecture ceiling with exposed conduits/lighting"
+      },
+      "gallery_residential": {
+        "url": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop",
+        "description": "Modern home exterior lighting at night"
+      },
+      "gallery_ev": {
+        "url": "https://images.unsplash.com/photo-1660925585093-61fcba5fcbf3?q=80&w=2070&auto=format&fit=crop",
+        "description": "EV Charger connected to a modern vehicle"
+      }
+    }
+  },
+  "instructions_to_main_agent": [
+    "Install and use 'lucide-react' for icons. Opt for sharp, technical icons.",
+    "Install 'framer-motion' for staggered animations.",
+    "Use pure HTML/Tailwind for the marketing layout, avoiding standard Shadcn 'Cards'.",
+    "Use Shadcn strictly for interactive logic (Contact Form, Admin Table, Dialogs).",
+    "For the admin route (/admin), use a dense 'Control Room' grid layout.",
+    "Add data-testid attributes to all buttons, links, form inputs, and key sections.",
+    "Never use placeholders. Use the provided image_urls for all media.",
+    "Adhere to the H1 scale maximum: text-4xl sm:text-5xl lg:text-6xl. DO NOT exceed."
+  ]
+}

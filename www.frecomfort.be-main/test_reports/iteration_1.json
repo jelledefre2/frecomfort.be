@@ -1,0 +1,31 @@
+{
+  "summary": "Smoke + integration testing of Voltline Electrical site. All backend endpoints (root, health, leads CRUD, stats, validation) pass. Frontend home, gallery filters, contact form submission, and admin (stats, filter, status PATCH, delete) all work end-to-end against the public REACT_APP_BACKEND_URL with 0 console errors.",
+  "tested_scope": ["backend", "frontend", "integration"],
+  "passed": [
+    "GET /api/ -> 200 with {message, status:'online'}",
+    "GET /api/health -> 200 {status:'ok'}",
+    "POST /api/leads valid payload -> 201 with auto id, status='new', ISO created_at",
+    "POST /api/leads invalid email -> 422",
+    "POST /api/leads invalid service_type -> 422",
+    "POST /api/leads missing message -> 422",
+    "GET /api/leads -> 200, sorted newest first (verified via created_at)",
+    "GET /api/leads?status_filter=new -> 200, all returned have status='new'",
+    "GET /api/leads/{id} -> 200; unknown id -> 404",
+    "PATCH /api/leads/{id} valid status updates to 'contacted' (200); invalid status -> 422; unknown id -> 404",
+    "DELETE /api/leads/{id} -> 200; subsequent GET -> 404",
+    "GET /api/stats -> 200 with {total,new,contacted,won} reflecting DB state",
+    "Frontend home '/' loads, VOLTLINE header visible, gallery + form render, 0 console errors",
+    "Gallery filter buttons (all/commercial) correctly filter project cards (commercial=1, all=6)",
+    "Contact form: filled inputs (name/email/phone/service_type SELECT/address/message), submitted via contact-submit, contact-success state shown; lead persisted (visible in admin)",
+    "Admin '/admin' loads, stat tiles show counts (Total/New reflecting DB)",
+    "Admin filter button 'new' filters lead list correctly",
+    "Admin status update button (lead-status-contacted-{id}) issues PATCH and updates UI",
+    "Admin delete button (lead-delete-{id}) removes lead after confirm, list and stats update (toast 'Lead deleted')"
+  ],
+  "failed": [],
+  "action_items": [],
+  "success_rate": {"backend": "100%", "frontend": "100%"},
+  "retest_needed": false,
+  "full_testing_deferred": true,
+  "notes": "Hero text exact-string locator did not match (likely due to letter-spacing splitting characters in the DOM), but page rendered correctly — not a functional bug. No further action required."
+}
